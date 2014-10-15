@@ -1,0 +1,42 @@
+<?php 
+$this->layout()->setTemplate('cshelperzfcuser/user/layout.phtml');
+$this->layout()->setTerminal(true);
+
+$form->prepare();
+$form->setAttribute('action', $this->url('cshelperzfcuser/login'));
+$form->setAttribute('method', 'post');
+$form->setAttribute('class', 'form-signin');
+$form->get('identity')->setAttribute('class', 'form-control');
+$form->get('identity')->setAttribute('placeholder', 'Correo electrónico');
+$form->get('identity')->setAttribute('autofocus', '');
+$form->get('credential')->setAttribute('class', 'form-control');
+$form->get('credential')->setAttribute('placeholder', 'Contraseña');
+$form->get('credential')->setAttribute('autocomplete', 'off');
+$form->get('submit')->setAttribute('class', 'btn btn-lg btn-success btn-block');
+$form->get('submit')->setLabel('Login');
+?>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Sign In</h3>
+            </div>
+            <div class="panel-body">
+                <?= $this->form()->openTag($form);?>
+                    <fieldset>
+                        <div class="form-group">
+                            <?= $this->formInput($form->get('identity'));?>
+                        </div>
+                        <div class="form-group">
+                            <?= $this->formInput($form->get('credential'));?>
+                        </div>
+                        <?= $this->formButton($form->get('submit'));?>
+                        <?php if ($this->redirect): ?>
+                            <input type="hidden" name="redirect" value="<?= $this->escapeHtml($this->redirect); ?>" />
+                        <?php endif ?> 
+                    </fieldset>
+                <?= $this->form()->closeTag();?>
+            </div>
+        </div>
+    </div>
+</div>
