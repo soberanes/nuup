@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <?php echo $this->headTitle('APP URREA')->setSeparator(' | ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle('nuup')->setSeparator(' | ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
@@ -17,14 +17,7 @@
 		                ->prependStylesheet($this->basePath() . '/assets/css/bootstrap-theme.min.css')
                         ->prependStylesheet($this->basePath() . '/assets/css/bootstrap.min.css')
 		?>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		
-        <!-- Scripts -->
-        <?php echo $this->headScript()
-            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-            ->prependFile($this->basePath() . '/js/jquery.min.js')
-        ; ?>
-        <!--[if lt IE 9]>
+		<!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
@@ -40,9 +33,9 @@
 	                </div>
 	                <ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<a href="#" class="dropdown-toggle top_icon" data-toggle="dropdown">
 								<i class="fa fa-inbox fa-lg"></i>
-								3 new messages <span class="caret"></span>
+								3<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li>
@@ -120,6 +113,7 @@
         <footer>
             <p class="container">&copy; 2014 <?php echo $this->translate('All rights reserved.') ?> | <a href="http://develephant.mx">develephant</a></p>
         </footer>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <?php echo $this->headScript()  
                 ->prependFile($this->basePath() . '/assets/js/bootstrap.min.js')
                 ->prependFile($this->basePath() . '/assets/js/jquery-1.11.0.js') ?>
